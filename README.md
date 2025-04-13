@@ -1,5 +1,3 @@
-Sure! Here's a **short and clean `README.md`** you can copy-paste directly into your project:
-
 ```markdown
 # 🤖💰 CryptoTalk Dock 🐳
 
