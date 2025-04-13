@@ -1,0 +1,38 @@
+<div class="d-flex flex-column justify-content-between bg-white rounded shadow-sm" style="height: 80vh;">
+  <!-- Chat display area -->
+  <div class="flex-grow-1 p-4 overflow-auto" style="background-color: #f8f9fa;">
+    <div class="bg-white rounded shadow-sm p-3">
+      <span class="fw-bold font-monospace"> Answer :  </span>
+      @if (response){
+      <markdown [data]="response" style="font-size: 1rem; line-height: 1.6;"></markdown>
+      }
+
+    </div>
+  </div>
+
+  <!-- Input area -->
+  <div class="border-top p-3 bg-light">
+    <div class="d-flex align-items-center gap-2">
+      <input
+        type="text"
+        [(ngModel)]="message"
+        class="form-control border-0 shadow-sm"
+        placeholder="Type your question..."
+        style="background-color: #f0f0f0; font-size: 1.05rem; padding: 0.75rem;"
+      >
+      <button
+        class="btn btn-dark px-4 shadow-sm"
+        style="font-size: 1rem; padding: 0.6rem 1.2rem;"
+        (click)="askChatBot()"
+      >
+        Send
+      </button>
+
+      @if (loading){
+      <div class="ms-3 text-muted d-flex align-items-center" style="font-size: 0.9rem;">
+        <div class="spinner-border spinner-border-sm text-dark me-2" role="status"></div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
